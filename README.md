@@ -1,4 +1,4 @@
-# weatherhacsk_linenotify
+# weatherhacks_linenotify
  Notify WeatherHacks API result with LINE Notify using Python
 
 ## Description
