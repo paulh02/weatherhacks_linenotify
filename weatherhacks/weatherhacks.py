@@ -108,11 +108,10 @@ class Weather(object):
 
     # 対象日の予報
     def __weatherDate(self, date):
-        index=list(map(lambda x:x.date, self.weather_date_list)).index(date)
-        if index != -1:
-            return self.weather_date_list[index]
-        else:
-            return None
+        for thisDate in self.weather_date_list:
+            if thisDate.date == date:
+                return thisDate
+        return None
 
     # 予報
     def yohou(self, date, icon=False):

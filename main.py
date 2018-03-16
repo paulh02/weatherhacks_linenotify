@@ -25,7 +25,9 @@ if __name__ == "__main__":
 
         # 今日、明日、明後日を通知
         for date in [weatherhacks.Weather.today, weatherhacks.Weather.tommorow, weatherhacks.Weather.dayAfterTomorrow]:
-            linenotify.postLineNotify(line_token, message=weather.yohou(date, icon=True).encode("utf_8"))
+            yohou = weather.yohou(date, icon=True).encode("utf_8")
+            if yohou:
+                linenotify.postLineNotify(line_token, message=yohou)
 
         endtime = datetime.now()
 
